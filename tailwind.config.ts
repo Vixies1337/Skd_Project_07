@@ -1,3 +1,4 @@
+import { Purple_Purse, Yellowtail } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -13,6 +14,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors:{
+        POrange: "#f4ddba",
+        PCyan: "#bae5f4",
+        PPurple: "#cfceff",
+        PPurplelight: "#f1f0ff",
+        PYellow: "#fae27c", 
+        PYellowLight: "#fefce8",
+        
+      }
     },
   },
   plugins: [],
