@@ -1,5 +1,7 @@
 {
-  "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(dashboard)/list/teachers/page": "app/(dashboard)/list/teachers/page.js"
+  "/(dashboard)/student/page": "app/(dashboard)/student/page.js",
+  "/(dashboard)/parent/page": "app/(dashboard)/parent/page.js",
+  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js",
+  "/(dashboard)/list/lessons/page": "app/(dashboard)/list/lessons/page.js",
+  "/(dashboard)/list/classes/page": "app/(dashboard)/list/classes/page.js"
 }
