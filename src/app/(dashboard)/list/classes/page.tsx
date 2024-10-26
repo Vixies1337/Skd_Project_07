@@ -18,7 +18,8 @@ const columns = [
     { header: "Tên lớp", accessor: "name" },
     { header: "Số sinh viên", accessor: "capacity",className: "hidden md:table-cell" },
     { header: "Lớp", accessor: "grade", className: "hidden md:table-cell"},
-    { header: "Giáo viên chủ nghiệm", accessor: "supervisor" }
+    { header: "Giáo viên chủ nghiệm", accessor: "supervisor" },
+    { header: "Hành động", accessor: "actions"}
 ];
 
 const ClassListPage = () => {
@@ -31,7 +32,7 @@ const ClassListPage = () => {
             </td>
             <td className="hidden md:table-cell">{item.capacity}</td>
             <td className="hidden md:table-cell">{item.grade}</td>
-            <td className="hidden md:table-cell">{item.supervisor}</td>
+            <td className="">{item.supervisor}</td>
             <td>
                 <div className="flex items-center gap-2">
                     <Link href={`/list/teacher/${item.id}`} legacyBehavior>
