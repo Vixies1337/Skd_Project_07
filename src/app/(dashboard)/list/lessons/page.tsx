@@ -16,7 +16,8 @@ type Lesson = {
 const columns = [
     { header: "Tên môn học", accessor: "subject" },
     { header: "Lớp", accessor: "class",className: "hidden md:table-cell" },
-    { header: "Giảng viên", accessor: "teacher" }
+    { header: "Giảng viên", accessor: "teacher" },
+    { header: "Hành động", accessor: "actions"}
 ];
 
 const LessonListPage = () => {
@@ -28,12 +29,12 @@ const LessonListPage = () => {
                 </div>
             </td>
             <td className="hidden md:table-cell">{item.class}</td>
-            <td className="hidden md:table-cell">{item.teacher}</td>
+            <td className="">{item.teacher}</td>
             <td>
                 <div className="flex items-center gap-2">
                     <Link href={`/list/teacher/${item.id}`} legacyBehavior>
                         <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/view.png" alt="" width={16} height={16} />
+                            <Image src="/edit.png" alt="" width={16} height={16} />
                         </button>
                     </Link>
                     {role === "admin" && (
