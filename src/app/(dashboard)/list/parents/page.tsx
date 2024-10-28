@@ -4,6 +4,7 @@ import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Image from 'next/image';
 import { role, parentsData } from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 
 type Parent = {
@@ -33,19 +34,16 @@ const ParentListPage = () => {
                 </div>
             </td>
             <td className="hidden md:table-cell">{item.students.join(",")}</td>
-            <td className="hidden md:table-cell">{item.phone}</td>
-            <td className="hidden md:table-cell">{item.address}</td>
+            <td className="hidden lg:table-cell">{item.phone}</td>
+            <td className="hidden lg:table-cell">{item.address}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/list/teacher/${item.id}`} legacyBehavior>
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/edit.png" alt="" width={16} height={16} />
-                        </button>
-                    </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+
+                        <>
+                        <FormModel table='parent' type='update' data={item}/>
+                        <FormModel table='parent' type='delete' id={item.id} />
+                        </>
                     )}
                 </div>
             </td>
@@ -66,9 +64,9 @@ const ParentListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
                             <Image src="/sort.png" alt="" width={20} height={20} />
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/plus.png" alt="" width={20} height={20} />
-                        </button>)}
+                        {role === "admin" && (
+                            <FormModel table='parent' type='create'/>
+                        )}
                     </div>
                 </div>
             </div>

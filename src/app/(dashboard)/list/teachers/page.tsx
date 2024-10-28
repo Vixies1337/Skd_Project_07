@@ -5,6 +5,7 @@ import Table from "@/components/Table";
 import Image from 'next/image';
 import { role } from "@/lib/data";
 import { teachersData } from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 type Teacher = {
     id: number;
@@ -47,8 +48,9 @@ const TeacherListPage = () => {
             <td className="hidden md:table-cell">{item.teacherId}</td>
             <td className="hidden md:table-cell">{item.subjects.join(", ")}</td>
             <td className="hidden md:table-cell">{item.classes.join(", ")}</td>
-            <td className="hidden md:table-cell">{item.phone}</td>
-            <td className="hidden md:table-cell">{item.address}</td>
+            <td className="hidden lg:table-cell">{item.phone}</td>
+            <td className="hidden lg:table-cell">{item.address}</td>
+
             <td>
                 <div className="flex items-center gap-2">
                     <Link href={`/list/teacher/${item.id}`} legacyBehavior>
@@ -57,9 +59,10 @@ const TeacherListPage = () => {
                         </button>
                     </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+                        // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
+                        //     <Image src="/delete.png" alt="" width={16} height={16} />
+                        // </button>
+                        <FormModel table='teacher' type='delete' id={item.id} />
                     )}
                 </div>
             </td>
@@ -81,9 +84,10 @@ const TeacherListPage = () => {
                             <Image src="/sort.png" alt="" width={20} height={20} />
                         </button>
                         {role === "admin" && (
-                            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                                <Image src="/delete.png" alt="" width={16} height={16} />
-                            </button>
+                            // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
+                            //     <Image src="/plus.png" alt="" width={16} height={16} />
+                            // </button>
+                            <FormModel table='teacher' type='create' />
                         )}
                     </div>
                 </div>

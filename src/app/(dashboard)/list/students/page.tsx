@@ -4,6 +4,7 @@ import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Image from 'next/image';
 import { role, studentsData } from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 
 type Student = {
@@ -45,19 +46,20 @@ const StudentListPage = () => {
             </td>
             <td className="hidden md:table-cell">{item.studentId}</td>
             <td className="hidden md:table-cell">{item.grade}</td>
-            <td className="hidden md:table-cell">{item.phone}</td>
-            <td className="hidden md:table-cell">{item.address}</td>
+            <td className="hidden lg:table-cell">{item.phone}</td>
+            <td className="hidden lg:table-cell">{item.address}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/list/teacher/${item.id}`} legacyBehavior>
+                    <Link href={`/list/student/${item.id}`} legacyBehavior>
                         <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PCyan">
                             <Image src="/view.png" alt="" width={16} height={16} />
                         </button>
                     </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+                        // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
+                        //     <Image src="/delete.png" alt="" width={16} height={16} />
+                        // </button>
+                        <FormModel table='student' type='delete' id={item.id} />
                     )}
                 </div>
             </td>
@@ -78,9 +80,12 @@ const StudentListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
                             <Image src="/sort.png" alt="" width={20} height={20} />
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/plus.png" alt="" width={20} height={20} />
-                        </button>)}
+                        {role === "admin" && (
+                            // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
+                            //     <Image src="/plus.png" alt="" width={20} height={20} />
+                            // </button>
+                            <FormModel table='student' type='create'/>
+                        )}
                     </div>
                 </div>
             </div>
