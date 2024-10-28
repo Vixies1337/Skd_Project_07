@@ -3,23 +3,24 @@ import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Image from 'next/image';
-import { examsData, role} from "@/lib/data";
+import { examsData, role } from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 
 type Exam = {
     id: number;
     subject: string;
-    class:string;
-    teacher:string;
+    class: string;
+    teacher: string;
     date: string;
 };
 
 const columns = [
     { header: "Tên môn học", accessor: "subject" },
-    { header: "Lớp", accessor: "class",className: "hidden md:table-cell" },
+    { header: "Lớp", accessor: "class", className: "hidden md:table-cell" },
     { header: "Giảng viên", accessor: "teacher" },
     { header: "Lịch thi", accessor: "date" },
-    { header: "Hành động", accessor: "actions"}
+    { header: "Hành động", accessor: "actions" }
 ];
 
 const ExamListPage = () => {
@@ -35,15 +36,11 @@ const ExamListPage = () => {
             <td className="hidden md:table-cell">{item.date}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/list/teacher/${item.id}`} legacyBehavior>
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/edit.png" alt="" width={16} height={16} />
-                        </button>
-                    </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+                        <>
+                            <FormModel table='exam' type='update' data={item} />
+                            <FormModel table='exam' type='delete' id={item.id} />
+                        </>
                     )}
                 </div>
             </td>
@@ -64,9 +61,9 @@ const ExamListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
                             <Image src="/sort.png" alt="" width={20} height={20} />
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/plus.png" alt="" width={20} height={20} />
-                        </button>)}
+                        {role === "admin" && (
+                            <FormModel table='exam' type='create'/>
+                        )}
                     </div>
                 </div>
             </div>

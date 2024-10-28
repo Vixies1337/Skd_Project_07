@@ -16,7 +16,7 @@ const config: Config = {
       },
       colors:{
         POrange: "#f4ddba",
-        PCyan: "#c2ebfb",
+        PCyan: "#c3ebfa",
         PPurple: "#cfceff",
         PPurpleLight: "#f1f0ff",
         PYellow: "#fae27c", 

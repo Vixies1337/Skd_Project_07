@@ -4,6 +4,7 @@ import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Image from 'next/image';
 import { lessonsData, role} from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 
 type Lesson = {
@@ -32,15 +33,11 @@ const LessonListPage = () => {
             <td className="">{item.teacher}</td>
             <td>
                 <div className="flex items-center gap-2">
-                    <Link href={`/list/teacher/${item.id}`} legacyBehavior>
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/edit.png" alt="" width={16} height={16} />
-                        </button>
-                    </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+                        <>
+                        <FormModel table='lesson' type='update' data={item}/>
+                        <FormModel table='lesson' type='delete' id={item.id}/>
+                        </>
                     )}
                 </div>
             </td>

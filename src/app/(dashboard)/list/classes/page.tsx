@@ -3,23 +3,24 @@ import Pagination from "@/components/Pagination";
 import TableSearch from "@/components/TableSearch";
 import Table from "@/components/Table";
 import Image from 'next/image';
-import { classesData, role} from "@/lib/data";
+import { classesData, role } from "@/lib/data";
+import FormModel from '@/components/FormModel';
 
 
 type Class = {
     id: number;
     name: string;
     capacity: number;
-    grade:number
+    grade: number
     supervisor: string;
 };
 
 const columns = [
     { header: "Tên lớp", accessor: "name" },
-    { header: "Số sinh viên", accessor: "capacity",className: "hidden md:table-cell" },
-    { header: "Lớp", accessor: "grade", className: "hidden md:table-cell"},
+    { header: "Số sinh viên", accessor: "capacity", className: "hidden md:table-cell" },
+    { header: "Lớp", accessor: "grade", className: "hidden md:table-cell" },
     { header: "Giáo viên chủ nghiệm", accessor: "supervisor" },
-    { header: "Hành động", accessor: "actions"}
+    { header: "Hành động", accessor: "actions" }
 ];
 
 const ClassListPage = () => {
@@ -41,9 +42,7 @@ const ClassListPage = () => {
                         </button>
                     </Link>
                     {role === "admin" && (
-                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PPurple">
-                            <Image src="/delete.png" alt="" width={16} height={16} />
-                        </button>
+                        <FormModel table='class' type='delete' id={item.id} />
                     )}
                 </div>
             </td>
@@ -64,9 +63,9 @@ const ClassListPage = () => {
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
                             <Image src="/sort.png" alt="" width={20} height={20} />
                         </button>
-                        {role === "admin" && (<button className="w-8 h-8 flex items-center justify-center rounded-full bg-PCyan">
-                            <Image src="/plus.png" alt="" width={20} height={20} />
-                        </button>)}
+                        {role === "admin" && (
+                            <FormModel table='subject' type='create'/>
+                        )}
                     </div>
                 </div>
             </div>
