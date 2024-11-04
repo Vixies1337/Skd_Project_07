@@ -1,7 +1,23 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import TeacherForm from "./forms/TeacherForm";
+import dynamic from "next/dynamic";
+// import TeacherForm from "./forms/TeacherForm";
+// import StudentForm from "./forms/StudentForm";
+
+const TeacherForm = dynamic(() => import("./forms/TeacherForm"),{
+    loading: ()=> <h1>Đang tải...</h1>,
+})
+const StudentForm = dynamic(() => import("./forms/StudentForm"),{
+    loading: ()=> <h1>Đang tải...</h1>,
+})
+
+
+const forms:{[key:string]:(type:"create" | "update", data?:any) => JSX.Element}={
+    teacher: (type,data) => <TeacherForm type={type} data={data} />,
+    student: (type,data) => <StudentForm type={type} data={data} />,
+
+}
 
 const FormModel = ({
     table,
@@ -40,8 +56,8 @@ const FormModel = ({
     const Form = () => {
         return type === "delete" && id ? (<form action="" className="p-4 flex flex-col gap-4">
             <span className="text-center font-medium">Tất cả dữ liệu sẽ mất. Bạn chắc chắn muốn xóa {table}?</span>
-            <button className="bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center">Xóa</button>
-        </form>) : (<TeacherForm type="create"/>);
+            <button className="bg-red-500 text-white py-2 px-4 rounded-md border-none w-max self-center">Xóa</button>
+        </form>) : type === "create" || "update" ? (forms[table](type,data)) : "Không tìm thấy Form";
     }
 
     return (

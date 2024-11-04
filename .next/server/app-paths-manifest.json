@@ -1,7 +1,7 @@
 {
-  "/(dashboard)/list/results/page": "app/(dashboard)/list/results/page.js",
-  "/(dashboard)/list/teachers/[id]/page": "app/(dashboard)/list/teachers/[id]/page.js",
+  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js",
+  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js",
+  "/(dashboard)/list/announcements/page": "app/(dashboard)/list/announcements/page.js",
   "/(dashboard)/list/students/page": "app/(dashboard)/list/students/page.js",
-  "/(dashboard)/list/students/[id]/page": "app/(dashboard)/list/students/[id]/page.js",
   "/(dashboard)/list/teachers/page": "app/(dashboard)/list/teachers/page.js"
 }
