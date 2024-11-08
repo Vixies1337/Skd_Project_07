@@ -93,7 +93,7 @@ export const teachersData = [
     name: "Ophelia Castro",
     email: "ophelia@castro.com",
     photo:
-      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
     subjects: ["Math", "Geometry"],
     classes: ["5A", "4B", "3C"],
