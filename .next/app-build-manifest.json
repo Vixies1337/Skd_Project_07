@@ -22,28 +22,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/layout.js"
     ],
-    "/(dashboard)/list/teachers/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/list/teachers/page.js"
-    ],
-    "/(dashboard)/list/teachers/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(dashboard)/list/teachers/[id]/page.css",
-      "static/chunks/app/(dashboard)/list/teachers/[id]/page.js"
-    ],
-    "/(dashboard)/list/students/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/list/students/page.js"
-    ],
-    "/(dashboard)/list/students/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(dashboard)/list/students/[id]/page.css",
-      "static/chunks/app/(dashboard)/list/students/[id]/page.js"
-    ],
     "/(dashboard)/student/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -56,10 +34,26 @@
       "static/css/app/(dashboard)/teacher/page.css",
       "static/chunks/app/(dashboard)/teacher/page.js"
     ],
-    "/(dashboard)/list/announcements/page": [
+    "/(dashboard)/parent/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/list/announcements/page.js"
+      "static/css/app/(dashboard)/parent/page.css",
+      "static/chunks/app/(dashboard)/parent/page.js"
+    ],
+    "/(dashboard)/list/classes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/list/classes/page.js"
+    ],
+    "/(dashboard)/list/subjects/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/list/subjects/page.js"
+    ],
+    "/(dashboard)/list/teachers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/list/teachers/page.js"
     ]
   }
 }
