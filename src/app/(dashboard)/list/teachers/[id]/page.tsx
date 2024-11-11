@@ -102,7 +102,7 @@ const SingleTeacherPage = () => {
                     <h1 className="text-xl font-semibold">Lối Tắt</h1>
                     <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
                         <Link className="p-3 rounded-md bg-POrange" href="/">Lớp Học</Link>
-                        <Link className="p-3 rounded-md bg-PCyan" href="/">Sinh Viên</Link>
+                        <Link className="p-3 rounded-md bg-PCyan" href={`/list/students?teacherId=${"teacher2"}`}>Sinh Viên</Link>
                         <Link className="p-3 rounded-md bg-PPurple" href="/">Tiết Dạy</Link>
                         <Link className="p-3 rounded-md bg-PYellow" href="/">Kiểm Tra</Link>
                         <Link className="p-3 rounded-md bg-POrange" href="/">Phân Công</Link>
