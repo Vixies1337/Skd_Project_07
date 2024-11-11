@@ -83,7 +83,7 @@ const SingleStudentPage = () => {
             <div className="bg-white p-4 rounded-md">
                 <h1 className="text-xl font-semibold">Lối Tắt</h1>
                 <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-                    <Link className="p-3 rounded-md bg-POrange" href="/">Lớp Học</Link>
+                    <Link className="p-3 rounded-md bg-POrange" href={`/list/teachers?classId=${2}`}>Giảng viên</Link>
                     <Link className="p-3 rounded-md bg-PCyan" href="/">Sinh Viên</Link>
                     <Link className="p-3 rounded-md bg-PPurple" href="/">Tiết học</Link>
                     <Link className="p-3 rounded-md bg-PYellow" href="/">Lịch Thi</Link>

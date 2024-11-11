@@ -1,7 +1,8 @@
 {
   "/page": "app/page.js",
-  "/(dashboard)/student/page": "app/(dashboard)/student/page.js",
-  "/(dashboard)/teacher/page": "app/(dashboard)/teacher/page.js",
-  "/(dashboard)/list/subjects/page": "app/(dashboard)/list/subjects/page.js",
-  "/(dashboard)/parent/page": "app/(dashboard)/parent/page.js"
+  "/(dashboard)/admin/page": "app/(dashboard)/admin/page.js",
+  "/(dashboard)/list/teachers/page": "app/(dashboard)/list/teachers/page.js",
+  "/(dashboard)/list/teachers/[id]/page": "app/(dashboard)/list/teachers/[id]/page.js",
+  "/(dashboard)/list/students/[id]/page": "app/(dashboard)/list/students/[id]/page.js",
+  "/(dashboard)/list/students/page": "app/(dashboard)/list/students/page.js"
 }
