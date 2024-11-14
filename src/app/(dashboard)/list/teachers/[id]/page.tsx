@@ -101,11 +101,11 @@ const SingleTeacherPage = () => {
                 <div className="bg-white p-4 rounded-md">
                     <h1 className="text-xl font-semibold">Lối Tắt</h1>
                     <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-                        <Link className="p-3 rounded-md bg-POrange" href="/">Lớp Học</Link>
+                        <Link className="p-3 rounded-md bg-POrange" href={`/list/classes?supervisorId=${"teacher12"}`}>Lớp Học</Link>
                         <Link className="p-3 rounded-md bg-PCyan" href={`/list/students?teacherId=${"teacher2"}`}>Sinh Viên</Link>
-                        <Link className="p-3 rounded-md bg-PPurple" href="/">Tiết Dạy</Link>
-                        <Link className="p-3 rounded-md bg-PYellow" href="/">Kiểm Tra</Link>
-                        <Link className="p-3 rounded-md bg-POrange" href="/">Phân Công</Link>
+                        <Link className="p-3 rounded-md bg-PPurple" href={`/list/lessons?teacherId=${"teacher2"}`}>Tiết Dạy</Link>
+                        <Link className="p-3 rounded-md bg-PYellow" href={`/list/exams?teacherId=${"teacher2"}`}>Kiểm Tra</Link>
+                        <Link className="p-3 rounded-md bg-POrange" href={`/list/assignments?teacherId=${"teacher2"}`}>Phân Công</Link>
                     </div>
                 </div>
                 <Performance />
