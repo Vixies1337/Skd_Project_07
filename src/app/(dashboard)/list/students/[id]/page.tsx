@@ -84,11 +84,10 @@ const SingleStudentPage = () => {
                 <h1 className="text-xl font-semibold">Lối Tắt</h1>
                 <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
                     <Link className="p-3 rounded-md bg-POrange" href={`/list/teachers?classId=${2}`}>Giảng viên</Link>
-                    <Link className="p-3 rounded-md bg-PCyan" href="/">Sinh Viên</Link>
-                    <Link className="p-3 rounded-md bg-PPurple" href="/">Tiết học</Link>
-                    <Link className="p-3 rounded-md bg-PYellow" href="/">Lịch Thi</Link>
-                    <Link className="p-3 rounded-md bg-PCyan" href="/">Lịch Kiểm Tra</Link>
-                    <Link className="p-3 rounded-md bg-POrange" href="/">Phân Công</Link>
+                    <Link className="p-3 rounded-md bg-PCyan" href={`/list/lessons?classId=${2}`}>Tiết học</Link>
+                    <Link className="p-3 rounded-md bg-PYellow" href={`/list/exams?classId=${2}`}>Lịch Thi</Link>
+                    <Link className="p-3 rounded-md bg-PCyan" href={`/list/assignments?classId=${2}`}>Phân Công</Link>
+                    <Link className="p-3 rounded-md bg-POrange" href={`/list/results?classId=${2}`}>Điểm Thi</Link>
                 </div>
             </div>
             <Performance/>
